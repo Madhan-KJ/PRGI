@@ -106,3 +106,4 @@ flask
 gunicorn
 supabase
 python-dotenv
+gevent
