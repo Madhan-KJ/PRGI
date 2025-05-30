@@ -5,14 +5,9 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../supabase')))
 from supabase1.clients import supabase  # Assuming supabase client is already initialized
 from jellyfish import jaro_winkler_similarity, metaphone
-import spacy
-import numpy as np
-from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 user_routes = Blueprint('user_routes', __name__)
-
-model = SentenceTransformer('paraphrase-MiniLM-L6-v2', device='cpu')
 
 def preprocess_title(title):
     # Remove stopwords and trivial words
